@@ -1,9 +1,9 @@
-#include <iostream>
+#include "Game.h"
 
 int main() {
-	int age = 5;
-
-	std::cout << "Hello world" << std::endl;
-	std::cin >> age;
-	std::cout << age + 5 << std::endl;
+    Game game;
+    
+    game.Run();
+    
+    return 0;
 }

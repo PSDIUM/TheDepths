@@ -71,23 +71,23 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)\bin\$(Platform)\$(Configuration)</OutDir>
-    <IntDir>$(SolutionDir)\bin\intermediates\$(Platform)\$(Configuration)</IntDir>
+    <OutDir>$(SolutionDir)\bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)\bin\intermediates\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)\bin\$(Platform)\$(Configuration)</OutDir>
-    <IntDir>$(SolutionDir)\bin\intermediates\$(Platform)\$(Configuration)</IntDir>
+    <OutDir>$(SolutionDir)\bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)\bin\intermediates\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)\bin\$(Platform)\$(Configuration)</OutDir>
-    <IntDir>$(SolutionDir)\bin\intermediates\$(Platform)\$(Configuration)</IntDir>
+    <OutDir>$(SolutionDir)\bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)\bin\intermediates\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)\bin\$(Platform)\$(Configuration)</OutDir>
-    <IntDir>$(SolutionDir)\bin\intermediates\$(Platform)\$(Configuration)</IntDir>
+    <OutDir>$(SolutionDir)\bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)\bin\intermediates\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -95,10 +95,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\Rob\Documents\GitHub\TheDepths\external\SFML\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\Rob\Documents\GitHub\TheDepths\external\SFML\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-audio-d.lib;sfml-network-d.lib;sfml-window-d.lib;sfml-system-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -107,10 +110,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\Rob\Documents\GitHub\TheDepths\external\SFML\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\Rob\Documents\GitHub\TheDepths\external\SFML\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-audio-d.lib;sfml-network-d.lib;sfml-window-d.lib;sfml-system-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -121,12 +127,15 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\Rob\Documents\GitHub\TheDepths\external\SFML\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\Rob\Documents\GitHub\TheDepths\external\SFML\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics.lib;sfml-audio.lib;sfml-network.lib;sfml-window.lib;sfml-system.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -137,16 +146,25 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\Rob\Documents\GitHub\TheDepths\external\SFML\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\Rob\Documents\GitHub\TheDepths\external\SFML\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics.lib;sfml-audio.lib;sfml-network.lib;sfml-window.lib;sfml-system.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\Main.cpp" />
+    <ClCompile Include="src\State.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Game.h" />
+    <ClInclude Include="src\State.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
