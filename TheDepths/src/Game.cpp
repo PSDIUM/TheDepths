@@ -7,7 +7,35 @@
 void Game::InitWindow()
 {
     //Create the inital window of the game. Use file to load window settings.
-	this->window = new sf::RenderWindow(sf::VideoMode(200, 200), "SFML works!");
+    std::ifstream ifs("config/window.ini");
+
+    std::string title = "None";
+    sf::VideoMode windowBounds(800,600);
+    unsigned framerateLimit = 120;
+    bool verticalSyncEnabled = 0;
+
+    if (ifs.is_open()) 
+    {
+        std::getline(ifs, title);
+        ifs >> windowBounds.width >> windowBounds.height;
+        ifs >> framerateLimit;
+        ifs >> verticalSyncEnabled;
+    } 
+    else
+    {
+        std::cout << "There was an error opening the window config file" << std::endl;
+    }
+
+    ifs.close();
+
+	this->window = new sf::RenderWindow(windowBounds, title);
+    this->window->setFramerateLimit(framerateLimit);
+    this->window->setVerticalSyncEnabled (verticalSyncEnabled);
+}
+
+void Game::InitStates()
+{
+    this->states.push(new GameState(this->window));
 }
 
 //Constructors/Destructors
@@ -17,11 +45,19 @@ Game::Game()
 {
     //Call initialising functions
     this->InitWindow();
+    this->InitStates();
 }
 
 Game::~Game()
 {
 	delete this->window;
+
+    while (!this->states.empty())
+    {
+        delete this->states.top();
+        this->states.pop();
+    }
+        
 }
 
 //Functions
@@ -52,6 +88,10 @@ void Game::UpdateSFMLEvents()
 void Game::Update()
 {
     this->UpdateSFMLEvents();
+
+    // Render items
+    if (!this->states.empty())
+        this->states.top()->Update(this->dt);
 }
 
 void Game::Render()
@@ -59,6 +99,8 @@ void Game::Render()
     this->window->clear();
 
     // Render items
+    if (!this->states.empty()) 
+        this->states.top()->Render();
 
     this->window->display();
 }
