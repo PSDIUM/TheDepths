@@ -40,7 +40,6 @@ void Game::InitStates()
 
 //Constructors/Destructors
 
-
 Game::Game()
 {
     //Call initialising functions
