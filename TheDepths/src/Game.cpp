@@ -44,12 +44,16 @@ void Game::InitStates()
 Game::Game()
 {
     //Call initialising functions
+    std::cout << "Game starting" << std::endl;
+
     this->InitWindow();
     this->InitStates();
 }
 
 Game::~Game()
 {
+   
+
 	delete this->window;
 
     while (!this->states.empty())
@@ -67,10 +71,10 @@ void Game::UpdateDt()
     //Updates the detlaTime variable with the amount of time it takes to update a single frame
     this->dt = dtClock.restart().asSeconds();
 
-    system("cls");
+    //system("cls");
 
-    std::string deltaTime = "Delta Time: " + std::to_string(this->dt);
-    std::cout << deltaTime << std::endl;
+    //std::string deltaTime = "Delta Time: " + std::to_string(this->dt);
+    //std::cout << deltaTime << std::endl;
 }
 
 void Game::UpdateSFMLEvents()
@@ -89,9 +93,23 @@ void Game::Update()
 {
     this->UpdateSFMLEvents();
 
-    // Render items
-    if (!this->states.empty())
+    //Application Running
+    if (!this->states.empty()) {
         this->states.top()->Update(this->dt);
+
+        if (this->states.top()->GetQuit()) {
+            this->states.top()->Quit();
+            delete this->states.top();
+            this->states.pop();
+        }
+    }
+    //Application End
+    else
+    {
+        this->OnEndApplication();
+        this->window->close();
+    }
+        
 }
 
 void Game::Render()
@@ -113,3 +131,9 @@ void Game::Run()
 		this->Render();
 	}
 }
+
+void Game::OnEndApplication()
+{
+    std::cout << "Game closing" << std::endl;
+}
+

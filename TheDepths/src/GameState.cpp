@@ -10,14 +10,20 @@ GameState::~GameState()
 
 }
 
-void GameState::EndState()
+void GameState::Quit()
 {
-	
+	//Handle all functions required before the state is closed
+	std:: cout << "Ending GameState" << std::endl;
+}
+
+void GameState::UpdateKeybinds(const float& dt)
+{
+	this->CheckForQuit();
 }
 
 void GameState::Update(const float& dt)
 {
-
+	this->UpdateKeybinds(dt);
 }
 
 void GameState::Render(sf::RenderTarget* target)

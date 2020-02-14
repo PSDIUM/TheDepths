@@ -26,6 +26,8 @@ public:
 	virtual ~Game();
 
 	//Functions
+	void OnEndApplication();
+
 	void UpdateDt();
 	void UpdateSFMLEvents();
 	void Update();
