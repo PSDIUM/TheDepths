@@ -1,8 +1,9 @@
 #include "State.h"
 
-State::State(sf::RenderWindow* window) 
+State::State(sf::RenderWindow* window, InputHandler* inputHandler) 
 {
 	this->window = window;
+	this->inputHandler = inputHandler;
 	this->quit = false;
 }
 

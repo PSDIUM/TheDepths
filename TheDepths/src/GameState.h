@@ -9,12 +9,12 @@ private:
 	Entity player;
 
 public:
-	GameState(sf::RenderWindow* window);
+	GameState(sf::RenderWindow* window, InputHandler* inputHandler);
 	virtual ~GameState();
 
 	//Functions
 	void Quit();
-	void UpdateKeybinds(const float& dt);
+	void UpdateInput(const float& dt);
 	void Update(const float& dt);
 	void Render(sf::RenderTarget* target = nullptr);
 };

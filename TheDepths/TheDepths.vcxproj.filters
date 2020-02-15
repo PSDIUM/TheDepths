@@ -13,6 +13,15 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Commands">
+      <UniqueIdentifier>{67597e4b-dec9-44f2-b109-abfc2ecc4e1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Commands\Header Files">
+      <UniqueIdentifier>{12ea4a26-818d-4bae-bdeb-b10c091d1e64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Commands\Source FIles">
+      <UniqueIdentifier>{e6ce15dd-5e36-4a05-85dd-c3a24e4c1da1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Main.cpp">
@@ -30,6 +39,15 @@
     <ClCompile Include="src\Entity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\InputHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Command.cpp">
+      <Filter>Commands\Source FIles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MoveCommand.cpp">
+      <Filter>Commands\Source FIles</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Game.h">
@@ -43,6 +61,15 @@
     </ClInclude>
     <ClInclude Include="src\Entity.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\InputHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Command.h">
+      <Filter>Commands\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MoveCommand.h">
+      <Filter>Commands\Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

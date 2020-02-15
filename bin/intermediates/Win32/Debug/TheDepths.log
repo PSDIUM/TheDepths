@@ -1,2 +1,10 @@
-﻿  Entity.cpp
+﻿  MoveCommand.cpp
+  Command.cpp
+  InputHandler.cpp
+  GameState.cpp
+  Game.cpp
+  Main.cpp
+  State.cpp
+  Generating Code...
+  LINK : C:\Users\Rob\Documents\GitHub\TheDepths\\bin\Win32\Debug\TheDepths.exe not found or not built by the last incremental link; performing full link
   TheDepths.vcxproj -> C:\Users\Rob\Documents\GitHub\TheDepths\\bin\Win32\Debug\TheDepths.exe

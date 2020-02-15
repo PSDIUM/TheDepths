@@ -1,7 +1,7 @@
 #pragma once
 
 #include "GameState.h"
-
+#include "InputHandler.h"
 
 class Game
 {
@@ -15,6 +15,8 @@ private:
 	float dt;
 
 	std::stack<State*> states;
+
+	InputHandler inputHandler;
 
 	//Initialisation
 	void InitWindow();

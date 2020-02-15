@@ -35,7 +35,7 @@ void Game::InitWindow()
 
 void Game::InitStates()
 {
-    this->states.push(new GameState(this->window));
+    this->states.push(new GameState(this->window, &this->inputHandler));
 }
 
 //Constructors/Destructors
